@@ -1,0 +1,100 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  filename: "themes/{{ flavor.identifier }}/catppuccin-{{ flavor.identifier }}-{{ accent }}.hjson"
+---
+skin: {
+  default: {{ text | css_rgb }} none / {{ subtext1 | css_rgb }} none
+  tree: {{ flavor.colors[accent] | css_rgb }} none / {{ surface2 | css_rgb }} none
+  parent: {{ surface2 | css_rgb }} none / {{ surface1 | css_rgb }} none
+  file: {{ text | css_rgb }} none / {{ subtext1 | css_rgb }} none
+  directory: {{ blue | css_rgb }} none Bold / {{ subtext0 | css_rgb }} none bold
+  exe: {{ green | css_rgb }} none
+  link: {{ teal | css_rgb }} none
+  pruning: {{ overlay0 | css_rgb }} none Italic
+  perm__: {{ surface2 | css_rgb }} none
+  perm_r: {{ sky | css_rgb }} none
+  perm_w: {{ maroon | css_rgb }} none
+  perm_x: {{ green | css_rgb }} none
+  owner: {{ lavender | css_rgb }} none
+  group: {{ mauve | css_rgb }} none
+  count: {{ peach | css_rgb }} {{ surface2 | css_rgb }}
+  dates: {{ sapphire | css_rgb }} none
+  sparse: {{ yellow | css_rgb }} none
+  content_extract: {{ teal | css_rgb }} none
+  content_match: {{ green | css_rgb }} none
+  device_id_major: {{ lavender | css_rgb }} none
+  device_id_sep: {{ surface2 | css_rgb }} none
+  device_id_minor: {{ lavender | css_rgb }} none
+
+  git_branch: {{ flavor.colors[accent] | css_rgb }} none
+  git_insertions: {{ green | css_rgb }} none
+  git_deletions: {{ red | css_rgb }} none
+  git_status_current: {{ subtext1 | css_rgb }} none
+  git_status_modified: {{ yellow | css_rgb }} none
+  git_status_new: {{ sky | css_rgb }} none Bold
+  git_status_ignored: {{ surface2 | css_rgb }} none
+  git_status_conflicted: {{ red | css_rgb }} none
+  git_status_other: {{ red | css_rgb }} none
+
+  selected_line: none {{ surface1 | css_rgb }} / none {{ surface0 | css_rgb }}
+  char_match: {{ green | css_rgb }} none Bold
+  file_error: {{ red | css_rgb }} none
+
+  flag_label: {{ subtext1 | css_rgb }} none
+  flag_value: {{ flavor.colors[accent] | css_rgb }} none Bold
+
+  input: {{ text | css_rgb }} none / {{ subtext1 | css_rgb }} {{ surface2 | css_rgb }}
+
+  status_error: {{ text | css_rgb }} {{ red | css_rgb }}
+  status_job: {{ yellow | css_rgb }} {{ surface1 | css_rgb }}
+  status_normal: {{ text | css_rgb }} {{ surface2 | css_rgb }}
+  status_italic: {{ flavor.colors[accent] | css_rgb }} {{ surface2 | css_rgb }} Italic
+  status_bold: {{ flavor.colors[accent] | css_rgb }} {{ surface2 | css_rgb }} Bold
+  status_code: {{ rosewater | css_rgb }} {{ surface2 | css_rgb }}
+  status_ellipsis: {{ subtext1 | css_rgb }} {{ surface1 | css_rgb }}
+
+  purpose_normal: {{ text | css_rgb }} {{ surface0 | css_rgb }}
+  purpose_italic: {{ yellow | css_rgb }} {{ surface0 | css_rgb }} Italic
+  purpose_bold: {{ yellow | css_rgb }} {{ surface0 | css_rgb }} Bold
+  purpose_ellipsis: {{ text | css_rgb }} {{ surface0 | css_rgb }}
+
+  scrollbar_track: {{ surface2 | css_rgb }} none / {{ surface1 | css_rgb }} none
+  scrollbar_thumb: {{ surface1 | css_rgb }} none / {{ surface0 | css_rgb }} none
+
+  help_paragraph: {{ text | css_rgb }} none
+  help_bold: {{ flavor.colors[accent] | css_rgb }} none Bold
+  help_italic: {{ maroon | css_rgb }} none Italic
+  help_code: {{ text | css_rgb }} {{ surface2 | css_rgb }}
+  help_headers: {{ flavor.colors[accent] | css_rgb }} none
+  help_table_border: {{ surface2 | css_rgb }} none
+
+  preview_title: {{ subtext1 | css_rgb }} none / {{ surface0 | css_rgb }} none
+  preview: {{ text | css_rgb }} {{ surface1 | css_rgb }} / {{ subtext1 | css_rgb }} {{ surface0 | css_rgb }}
+  preview_separator: {{ flavor.colors[accent] | css_rgb }} none / {{ surface2 | css_rgb }} none
+  preview_line_number: {{ subtext0 | css_rgb }} {{ surface2 | css_rgb }}
+  preview_match: none {{ green | css_rgb }}
+
+  hex_null: {{ overlay0 | css_rgb }} none
+  hex_ascii_graphic: {{ surface1 | css_rgb }} none
+  hex_ascii_whitespace: {{ yellow | css_rgb }} none
+  hex_ascii_other: {{ peach | css_rgb }} none
+  hex_non_ascii: {{ red | css_rgb }} none
+
+  staging_area_title: {{ subtext1 | css_rgb }} none / {{ surface0 | css_rgb }} none
+  mode_command_mark: {{ surface2 | css_rgb }} {{ red | css_rgb }} Bold
+
+  good_to_bad_0: {{ green | add(lightness=10) | css_rgb }}
+  good_to_bad_1: {{ green | add(lightness=5) | css_rgb }}
+  good_to_bad_2: {{ green | css_rgb }}
+  good_to_bad_3: {{ green | sub(saturation=10) | css_rgb }}
+  good_to_bad_4: {{ yellow | css_rgb }}
+  good_to_bad_5: {{ peach | css_rgb }}
+  good_to_bad_6: {{ peach | sub(saturation=10) | css_rgb }}
+  good_to_bad_7: {{ red | add(lightness=5) | css_rgb }}
+  good_to_bad_8: {{ red | css_rgb }}
+  good_to_bad_9: {{ red | sub(lightness=10) | css_rgb }}
+}
